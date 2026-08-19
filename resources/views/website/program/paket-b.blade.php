@@ -24,116 +24,169 @@
         </nav>
     </div>
 
-    {{-- =========================================================
-        HERO PROGRAM
-    ========================================================== --}}
-    <section class="program-hero">
-        <div class="container">
-            <div class="row g-4 align-items-center">
+    {{-- PILIH PROGRAM --}}
+<section class="program-navigation-section py-4">
+    <div class="container">
 
-                {{-- SIDEBAR --}}
-                <div class="col-lg-3">
-                    <div class="program-sidebar">
-                        <div class="card">
-                            <div class="card-header">
-                                <i class="bi bi-mortarboard-fill me-2"></i>
-                                Program
-                            </div>
+        <div class="program-sidebar">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
 
-                            <div class="list-group list-group-flush">
-                                <a href="{{ route('program.paket-b') }}"
-                                   class="list-group-item list-group-item-action active">
-                                    <i class="bi bi-book me-2"></i>
-                                    Paket B
-                                </a>
-
-                                <a href="{{ route('program.paket-c') }}"
-                                   class="list-group-item list-group-item-action">
-                                    <i class="bi bi-book me-2"></i>
-                                    Paket C
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-header bg-primary text-white fw-bold py-3">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    Pilih Program Pendidikan
                 </div>
 
-                {{-- HERO --}}
-                <div class="col-lg-9">
-                    <div class="program-hero-card">
-                        <div class="row align-items-center g-4">
+                <div class="list-group list-group-horizontal">
 
-                            {{-- KONTEN HERO --}}
-                            <div class="col-md-7">
-                                <div class="program-hero-content">
-                                    <div class="program-badge">
-                                        <i class="bi bi-mortarboard-fill"></i>
-                                        Program Pendidikan Kesetaraan
-                                    </div>
+                    {{-- Paket B --}}
+                    <a href="{{ route('program.paket-b') }}"
+                       class="list-group-item list-group-item-action
+                       active
+                       text-center py-3">
 
-                                    <h1 class="program-hero-title">
-                                        Program {{ $program->nama_program }}
-                                    </h1>
+                        <i class="bi bi-book me-2"></i>
 
-                                    <div class="program-hero-line"></div>
+                        <strong>Paket B</strong>
 
+                        <small class="d-block mt-1">
+                            Setara dengan jenjang SMP
+                        </small>
 
-                                    <p class="program-hero-description">
-                                        {{ $program->deskripsi }}
-                                    </p>
-
-                                    {{-- INFORMASI SINGKAT --}}
-                                    <div class="program-hero-buttons">
-                                        <span class="badge rounded-pill text-bg-light border">
-                                            <i class="bi bi-mortarboard-fill me-1"></i>
-
-                                            Setara SMP
-
-                                        </span>
-
-                                        <span class="badge rounded-pill text-bg-light border">
-                                            <i class="bi bi-person-workspace me-1"></i>
-                                            Pendampingan Tutor
-
-                                        </span>
-                                    </div>
-
-                                    {{-- TOMBOL --}}
-                                    <div class="program-hero-buttons mt-3">
-                                        <a href="{{ route('ppdb') }}"
-                                           class="btn btn-primary">
-                                            <i class="bi bi-pencil-square me-2"></i>
-                                            Daftar Sekarang
-
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    </a>
 
 
-                            {{-- GAMBAR --}}
-                            <div class="col-md-5">
-                                <div class="program-hero-image">
-                                    @if($program->gambar)
-                                        <img
-                                            src="{{ asset('storage/'.$program->gambar) }}"
-                                            alt="{{ $program->nama_program }}">
+                    {{-- Paket C --}}
+                    <a href="{{ route('program.paket-c') }}"
+                       class="list-group-item list-group-item-action
+                       text-center py-3">
 
-                                    @else
-                                        <div class="program-image-placeholder">
-                                            <i class="bi bi-image"></i>
-                                            <span>
-                                                Gambar Program
-                                            </span>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <i class="bi bi-book me-2"></i>
+
+                        <strong>Paket C</strong>
+
+                        <small class="d-block mt-1">
+                            Setara dengan jenjang SMA
+                        </small>
+
+                    </a>
+
                 </div>
+
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
+
+
+{{-- HERO PROGRAM --}}
+<section class="program-hero">
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            {{-- HERO --}}
+            <div class="col-12">
+
+                <div class="program-hero-card">
+
+                    <div class="row align-items-center g-4">
+
+                        {{-- KONTEN HERO --}}
+                        <div class="col-md-7">
+
+                            <div class="program-hero-content">
+
+                                <div class="program-badge">
+                                    <i class="bi bi-mortarboard-fill"></i>
+                                    Program Pendidikan Kesetaraan
+                                </div>
+
+                                <h1 class="program-hero-title">
+                                    Program {{ $program->nama_program }}
+                                </h1>
+
+                                <div class="program-hero-line"></div>
+
+                                <p class="program-hero-description">
+                                    {{ $program->deskripsi }}
+                                </p>
+
+
+                                {{-- INFORMASI SINGKAT --}}
+                                <div class="program-hero-buttons">
+
+                                    <span class="badge rounded-pill text-bg-light border">
+                                        <i class="bi bi-mortarboard-fill me-1"></i>
+                                        Setara SMP
+                                    </span>
+
+                                    <span class="badge rounded-pill text-bg-light border">
+                                        <i class="bi bi-person-workspace me-1"></i>
+                                        Pendampingan Tutor
+                                    </span>
+
+                                </div>
+
+
+                                {{-- TOMBOL --}}
+                                <div class="program-hero-buttons mt-3">
+
+                                    <a href="{{ route('ppdb') }}"
+                                       class="btn btn-primary">
+
+                                        <i class="bi bi-pencil-square me-2"></i>
+
+                                        Daftar Sekarang
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- GAMBAR --}}
+                        <div class="col-md-5">
+
+                            <div class="program-hero-image">
+
+                                @if($program->gambar)
+
+                                    <img
+                                        src="{{ asset('storage/'.$program->gambar) }}"
+                                        alt="{{ $program->nama_program }}">
+
+                                @else
+
+                                    <div class="program-image-placeholder">
+
+                                        <i class="bi bi-image"></i>
+
+                                        <span>
+                                            Gambar Program
+                                        </span>
+
+                                    </div>
+
+                                @endif
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 
     {{-- =========================================================

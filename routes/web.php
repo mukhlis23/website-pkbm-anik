@@ -39,11 +39,8 @@ Route::get('/profil', function () {
 
 
 // Program
-Route::get('/program', function () {
-
-    return redirect()->route('program.paket-b');
-
-})->name('program');
+Route::get('/program', [ProgramController::class, 'index'])
+    ->name('program');
 
 
 // Program Paket B

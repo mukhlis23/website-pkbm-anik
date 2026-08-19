@@ -97,7 +97,7 @@
 
             <h1 class="fw-bold mb-2">
                 @if(isset($kategori) && $kategori)
-                    Informasi {{ $kategori }}
+                     {{ $kategori }}
                 @else
                     Informasi PKBM ANIK
                 @endif

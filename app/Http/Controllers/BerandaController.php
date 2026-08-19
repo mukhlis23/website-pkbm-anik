@@ -6,6 +6,7 @@ use App\Models\Profil;
 use App\Models\Program;
 use App\Models\Informasi;
 use App\Models\Galeri;
+use App\Models\Ppdb;
 
 class BerandaController extends Controller
 {
@@ -17,23 +18,28 @@ class BerandaController extends Controller
         // Program
         $programs = Program::orderBy('nama_program', 'asc')->get();
 
-        // Informasi terbaru berdasarkan tanggal informasi
+        // Informasi terbaru
         $informasis = Informasi::orderBy('tanggal', 'desc')
             ->take(3)
             ->get();
 
-        // Galeri terbaru berdasarkan tanggal upload
-        // Mengambil relasi foto dalam setiap album
+        // Galeri terbaru
         $galeris = Galeri::with('fotos')
             ->orderBy('tanggal_upload', 'desc')
             ->take(6)
             ->get();
 
+        // PPDB
+        // Ambil data PPDB tanpa memfilter status.
+        // Jadi status Buka maupun Tutup tetap dikirim ke Beranda.
+        $ppdb = Ppdb::latest()->first();
+
         return view('website.beranda.index', compact(
             'profil',
             'programs',
             'informasis',
-            'galeris'
+            'galeris',
+            'ppdb'
         ));
     }
 }

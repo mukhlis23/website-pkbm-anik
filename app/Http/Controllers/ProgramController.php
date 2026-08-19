@@ -7,6 +7,20 @@ use App\Models\Program;
 class ProgramController extends Controller
 {
     /**
+     * Halaman utama Program
+     */
+    public function index()
+    {
+        $programs = Program::orderBy('id', 'asc')->get();
+
+        return view(
+            'website.program.index',
+            compact('programs')
+        );
+    }
+
+
+    /**
      * Halaman Program Paket B
      */
     public function paketB()
@@ -15,7 +29,10 @@ class ProgramController extends Controller
             ->where('nama_program', 'Paket B')
             ->first();
 
-        return view('website.program.paket-b', compact('program'));
+        return view(
+            'website.program.paket-b',
+            compact('program')
+        );
     }
 
 
@@ -28,6 +45,9 @@ class ProgramController extends Controller
             ->where('nama_program', 'Paket C')
             ->first();
 
-        return view('website.program.paket-c', compact('program'));
+        return view(
+            'website.program.paket-c',
+            compact('program')
+        );
     }
 }

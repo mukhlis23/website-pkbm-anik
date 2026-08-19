@@ -27,68 +27,102 @@
 
 
 {{-- =========================================================
+    PILIH PROGRAM
+========================================================== --}}
+<section class="program-navigation-section py-3">
+
+    <div class="container">
+
+        <div class="program-sidebar">
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+                {{-- Header --}}
+                <div class="card-header bg-primary text-white fw-bold py-3">
+
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+
+                    Pilih Program Pendidikan
+
+                </div>
+
+
+                {{-- Pilihan Program --}}
+                <div class="list-group list-group-horizontal">
+
+                    {{-- =================================================
+                        PAKET B
+                    ================================================== --}}
+                    <a href="{{ route('program.paket-b') }}"
+                       class="list-group-item list-group-item-action text-center py-3">
+
+                        <i class="bi bi-book me-2"></i>
+
+                        <strong>
+                            Paket B
+                        </strong>
+
+                        <small class="d-block mt-1 text-secondary">
+                            Setara dengan jenjang SMP
+                        </small>
+
+                    </a>
+
+
+                    {{-- =================================================
+                        PAKET C
+                    ================================================== --}}
+                    <a href="{{ route('program.paket-c') }}"
+                       class="list-group-item list-group-item-action active text-center py-3">
+
+                        <i class="bi bi-book me-2"></i>
+
+                        <strong>
+                            Paket C
+                        </strong>
+
+                        <small class="d-block mt-1">
+                            Setara dengan jenjang SMA
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{{-- =========================================================
     HERO PROGRAM
 ========================================================== --}}
 <section class="program-hero">
 
     <div class="container">
 
-        <div class="row g-4 align-items-center">
-
-            {{-- SIDEBAR --}}
-            <div class="col-lg-3">
-
-                <div class="program-sidebar">
-
-                    <div class="card">
-
-                        <div class="card-header">
-                            <i class="bi bi-mortarboard-fill me-2"></i>
-                            Program
-                        </div>
-
-                        <div class="list-group list-group-flush">
-
-                            {{-- PAKET B --}}
-                            <a href="{{ route('program.paket-b') }}"
-                               class="list-group-item list-group-item-action">
-
-                                <i class="bi bi-book me-2"></i>
-                                Paket B
-
-                            </a>
-
-
-                            {{-- PAKET C --}}
-                            <a href="{{ route('program.paket-c') }}"
-                               class="list-group-item list-group-item-action active">
-
-                                <i class="bi bi-book me-2"></i>
-                                Paket C
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="row align-items-center">
 
             {{-- HERO --}}
-            <div class="col-lg-9">
+            <div class="col-12">
 
                 <div class="program-hero-card">
 
                     <div class="row align-items-center g-4">
 
-                        {{-- KONTEN HERO --}}
+
+                        {{-- =================================================
+                            KONTEN HERO
+                        ================================================== --}}
                         <div class="col-md-7">
 
                             <div class="program-hero-content">
 
+                                {{-- Badge --}}
                                 <div class="program-badge">
 
                                     <i class="bi bi-mortarboard-fill"></i>
@@ -98,6 +132,7 @@
                                 </div>
 
 
+                                {{-- Judul --}}
                                 <h1 class="program-hero-title">
 
                                     Program {{ $program->nama_program }}
@@ -105,9 +140,11 @@
                                 </h1>
 
 
+                                {{-- Garis --}}
                                 <div class="program-hero-line"></div>
 
 
+                                {{-- Deskripsi --}}
                                 <p class="program-hero-description">
 
                                     {{ $program->deskripsi }}
@@ -115,7 +152,9 @@
                                 </p>
 
 
-                                {{-- INFORMASI SINGKAT --}}
+                                {{-- =================================================
+                                    INFORMASI SINGKAT
+                                ================================================== --}}
                                 <div class="program-hero-buttons">
 
                                     <span class="badge rounded-pill text-bg-light border">
@@ -138,7 +177,9 @@
                                 </div>
 
 
-                                {{-- TOMBOL --}}
+                                {{-- =================================================
+                                    TOMBOL DAFTAR
+                                ================================================== --}}
                                 <div class="program-hero-buttons mt-3">
 
                                     <a href="{{ route('ppdb') }}"
@@ -157,7 +198,9 @@
                         </div>
 
 
-                        {{-- GAMBAR --}}
+                        {{-- =================================================
+                            GAMBAR
+                        ================================================== --}}
                         <div class="col-md-5">
 
                             <div class="program-hero-image">
@@ -209,7 +252,9 @@
         <div class="row g-3">
 
 
-            {{-- SETARA SMA --}}
+            {{-- =================================================
+                SETARA SMA
+            ================================================== --}}
             <div class="col-md-4">
 
                 <div class="program-quick-card">
@@ -238,7 +283,9 @@
             </div>
 
 
-            {{-- PEMBELAJARAN FLEKSIBEL --}}
+            {{-- =================================================
+                PEMBELAJARAN FLEKSIBEL
+            ================================================== --}}
             <div class="col-md-4">
 
                 <div class="program-quick-card">
@@ -267,7 +314,9 @@
             </div>
 
 
-            {{-- PENDAMPINGAN TUTOR --}}
+            {{-- =================================================
+                PENDAMPINGAN TUTOR
+            ================================================== --}}
             <div class="col-md-4">
 
                 <div class="program-quick-card">
@@ -342,7 +391,9 @@
             <div class="row align-items-center g-4">
 
 
-                {{-- GAMBAR --}}
+                {{-- =================================================
+                    GAMBAR
+                ================================================== --}}
                 <div class="col-lg-5">
 
                     <div class="program-about-image">
@@ -383,7 +434,9 @@
                 </div>
 
 
-                {{-- TENTANG --}}
+                {{-- =================================================
+                    TENTANG
+                ================================================== --}}
                 <div class="col-lg-7">
 
                     <div class="program-about-content">
@@ -434,7 +487,9 @@
         <div class="row g-4">
 
 
-            {{-- MATERI --}}
+            {{-- =================================================
+                MATERI
+            ================================================== --}}
             <div class="col-lg-7">
 
                 <div class="program-detail-card h-100">
@@ -478,7 +533,9 @@
             </div>
 
 
-            {{-- JADWAL --}}
+            {{-- =================================================
+                JADWAL
+            ================================================== --}}
             <div class="col-lg-5">
 
                 <div class="program-detail-card program-schedule-card h-100">
